@@ -93,7 +93,12 @@ namespace WBS_Kplus_SN
             for (int i = 0; i < snArray.Length ; i++)
             {
                 SendKeys.Send(snArray[i]);
-                SendKeys.Send("{ENTER}");
+                //SendKeys.Send("{ENTER}");  //Fehlerhafte ausgabe von "M"
+                //SendKeys.Send("{TAB}");    //Fehlerhafte Ausgabe von "I" oder "l" (nicht ersichtlich)
+                //SendKeys.Send("%b");       // ALT+b funktioniert nur wenn man vorher in das Textfeld rechts daneben wechselt. (Tab geht ja aber nicht)
+                //evt SendKeys.SendWait??
+                SendKeys.Send("\n");
+
             }
 
             return 0;

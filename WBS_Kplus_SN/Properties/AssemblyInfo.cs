@@ -1,16 +1,17 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("WBS_Kplus_SN")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("WBS Kplus SN")]
+[assembly: AssemblyDescription("Seriennummern Tool für Kplus")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("WBS It-Service GmbH")]
 [assembly: AssemblyProduct("WBS_Kplus_SN")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Paul Becker Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -34,3 +35,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguage("de-DE")]
