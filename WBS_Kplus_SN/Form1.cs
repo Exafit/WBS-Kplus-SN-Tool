@@ -60,12 +60,32 @@ namespace WBS_Kplus_SN
 
         private void rbMitKomma_CheckedChanged(object sender, EventArgs e)
         {
-            textSplit();
+            //textSplit();
         }
 
         private void rbOhneKomma_CheckedChanged(object sender, EventArgs e)
         {
+            //textSplit();
+        }
 
+        private void rbMitSn_CheckedChanged(object sender, EventArgs e)
+        {
+            //textSplit();
+        }
+
+        private void rbMitSn_Click(object sender, EventArgs e)
+        {
+            textSplit();
+        }
+
+        private void rbMitKomma_Click(object sender, EventArgs e)
+        {
+            textSplit();
+        }
+
+        private void rbOhneKomma_Click(object sender, EventArgs e)
+        {
+            textSplit();
         }
 
         private void textSplit()
@@ -87,23 +107,37 @@ namespace WBS_Kplus_SN
                 lbxVorschau.Items.Clear();
                 lbxVorschau.Items.AddRange(snArray);
             }
+            if (rbMitSn.Checked == true)
+            {
+                snText = richTextBox1.Text;
+                snText = Regex.Replace(snText, @"SN:", "");
+                snText = Regex.Replace(snText, @"\s+|\(|\)", "");
+                snArray = snText.Split(',');
+                lbxVorschau.Items.Clear();
+                lbxVorschau.Items.AddRange(snArray);
+            }
+            lbAnzahl.Text = lbxVorschau.Items.Count.ToString();
         }
 
         public int SimulateKeyInput(string[] snArray)
         {
-            for (int i = 0; i < snArray.Length ; i++)
+            if (snArray != null)
             {
-                SendKeys.Send(snArray[i]);
-                //SendKeys.Send("{ENTER}");  //Fehlerhafte ausgabe von "M"
-                //SendKeys.Send("{TAB}");    //Fehlerhafte Ausgabe von "I" oder "l" (nicht ersichtlich)
-                //SendKeys.Send("%b");       // ALT+b funktioniert nur wenn man vorher in das Textfeld rechts daneben wechselt. (Tab geht ja aber nicht)
-                //evt SendKeys.SendWait??
-                //SendKeys.Send("\n");
-                Thread.Sleep(100);
-                InputSender.ClickKey(0x1c);
-                Thread.Sleep(500);
+                for (int i = 0; i < snArray.Length; i++)
+                {
+                    SendKeys.Send(snArray[i]);
+                    //SendKeys.Send("{ENTER}");  //Fehlerhafte ausgabe von "M"
+                    //SendKeys.Send("{TAB}");    //Fehlerhafte Ausgabe von "I" oder "l" (nicht ersichtlich)
+                    //SendKeys.Send("%b");       // ALT+b funktioniert nur wenn man vorher in das Textfeld rechts daneben wechselt. (Tab geht ja aber nicht)
+                    //evt SendKeys.SendWait??
+                    //SendKeys.Send("\n");
+                    Thread.Sleep(100);
+                    InputSender.ClickKey(0x1c);
+                    Thread.Sleep(500);
+                }
             }
-
+            this.Activate();
+            MessageBox.Show($"Fertig. \n{lbxVorschau.Items.Count.ToString()} SN eingefügt. \nBitte überprüfen Sie die Eingabe!");
             return 0;
         }
     }

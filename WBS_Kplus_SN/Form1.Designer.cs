@@ -40,6 +40,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lbAnzahl = new System.Windows.Forms.Label();
+            this.rbMitSn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,35 +50,37 @@
             this.rbMitKomma.AutoSize = true;
             this.rbMitKomma.Checked = true;
             this.rbMitKomma.Location = new System.Drawing.Point(42, 211);
-            this.rbMitKomma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbMitKomma.Margin = new System.Windows.Forms.Padding(2);
             this.rbMitKomma.Name = "rbMitKomma";
             this.rbMitKomma.Size = new System.Drawing.Size(118, 17);
-            this.rbMitKomma.TabIndex = 1;
+            this.rbMitKomma.TabIndex = 2;
             this.rbMitKomma.TabStop = true;
             this.rbMitKomma.Text = "mit Komma getrennt";
             this.rbMitKomma.UseVisualStyleBackColor = true;
             this.rbMitKomma.CheckedChanged += new System.EventHandler(this.rbMitKomma_CheckedChanged);
+            this.rbMitKomma.Click += new System.EventHandler(this.rbMitKomma_Click);
             // 
             // rbOhneKomma
             // 
             this.rbOhneKomma.AutoSize = true;
             this.rbOhneKomma.Location = new System.Drawing.Point(42, 229);
-            this.rbOhneKomma.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbOhneKomma.Margin = new System.Windows.Forms.Padding(2);
             this.rbOhneKomma.Name = "rbOhneKomma";
             this.rbOhneKomma.Size = new System.Drawing.Size(129, 17);
-            this.rbOhneKomma.TabIndex = 2;
+            this.rbOhneKomma.TabIndex = 3;
             this.rbOhneKomma.Text = "ohne Komma getrennt";
             this.rbOhneKomma.UseVisualStyleBackColor = true;
             this.rbOhneKomma.CheckedChanged += new System.EventHandler(this.rbOhneKomma_CheckedChanged);
+            this.rbOhneKomma.Click += new System.EventHandler(this.rbOhneKomma_Click);
             // 
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(42, 253);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(100, 54);
-            this.btnStart.TabIndex = 3;
+            this.btnStart.TabIndex = 5;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -95,10 +99,10 @@
             // 
             this.lbxVorschau.FormattingEnabled = true;
             this.lbxVorschau.Location = new System.Drawing.Point(330, 84);
-            this.lbxVorschau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbxVorschau.Margin = new System.Windows.Forms.Padding(2);
             this.lbxVorschau.Name = "lbxVorschau";
             this.lbxVorschau.Size = new System.Drawing.Size(182, 225);
-            this.lbxVorschau.TabIndex = 5;
+            this.lbxVorschau.TabIndex = 6;
             // 
             // label2
             // 
@@ -139,10 +143,10 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(42, 84);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(259, 125);
-            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
             // 
@@ -162,7 +166,7 @@
             // 
             this.pictureBox1.Image = global::WBS_Kplus_SN.Properties.Resources.wbs_logoweissblau_klein;
             this.pictureBox1.Location = new System.Drawing.Point(400, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(120, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,11 +184,35 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Paul B.";
             // 
+            // lbAnzahl
+            // 
+            this.lbAnzahl.AutoSize = true;
+            this.lbAnzahl.Location = new System.Drawing.Point(432, 70);
+            this.lbAnzahl.Name = "lbAnzahl";
+            this.lbAnzahl.Size = new System.Drawing.Size(13, 13);
+            this.lbAnzahl.TabIndex = 13;
+            this.lbAnzahl.Text = "0";
+            // 
+            // rbMitSn
+            // 
+            this.rbMitSn.AutoSize = true;
+            this.rbMitSn.Location = new System.Drawing.Point(165, 211);
+            this.rbMitSn.Name = "rbMitSn";
+            this.rbMitSn.Size = new System.Drawing.Size(160, 17);
+            this.rbMitSn.TabIndex = 4;
+            this.rbMitSn.TabStop = true;
+            this.rbMitSn.Text = "mit SN: und Komma getrennt";
+            this.rbMitSn.UseVisualStyleBackColor = true;
+            this.rbMitSn.CheckedChanged += new System.EventHandler(this.rbMitSn_CheckedChanged);
+            this.rbMitSn.Click += new System.EventHandler(this.rbMitSn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 342);
+            this.Controls.Add(this.rbMitSn);
+            this.Controls.Add(this.lbAnzahl);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -197,7 +225,7 @@
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.rbOhneKomma);
             this.Controls.Add(this.rbMitKomma);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -219,6 +247,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbAnzahl;
+        private System.Windows.Forms.RadioButton rbMitSn;
     }
 }
 
