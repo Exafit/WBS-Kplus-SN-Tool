@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.rbMitKomma = new System.Windows.Forms.RadioButton();
             this.rbOhneKomma = new System.Windows.Forms.RadioButton();
             this.btnStart = new System.Windows.Forms.Button();
@@ -131,14 +132,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.label4.Location = new System.Drawing.Point(26, 22);
+            this.label4.Location = new System.Drawing.Point(27, 14);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(360, 39);
+            this.label4.Size = new System.Drawing.Size(361, 52);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Füge den SN-Text in das Textfeld und wähle das Trennzeichen. \r\nKlicke auf Start u" +
-    "nd positioniere den Mauscurser im SN-Textfeld der Kplus. \r\nNach 5 Sekunden werde" +
-    "n die SN automatisch eingefüht.";
+            this.label4.Text = resources.GetString("label4.Text");
             // 
             // richTextBox1
             // 

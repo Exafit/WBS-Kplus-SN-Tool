@@ -24,6 +24,7 @@ namespace WBS_Kplus_SN
         public Form1()
         {
             InitializeComponent();
+            this.Text = "WBS KPlus Seriennummern Tool";
             timer.Tick += Timer_Tick;
         }
 

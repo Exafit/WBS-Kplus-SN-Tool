@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Füge den SN-Text in das Textfeld und wähle das Trennzeichen. 
+Klicke auf Start und positioniere den Mauscursor im SN-Textfeld der KPlus. 
+Nach 5 Sekunden werden die SN automatisch eingefüht.
+Während des Vorgangs keine Tasten drücken!
+</value>
+  </data>
 </root>
