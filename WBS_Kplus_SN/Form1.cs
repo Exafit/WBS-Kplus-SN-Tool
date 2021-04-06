@@ -8,12 +8,13 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace WBS_Kplus_SN
 {
     public partial class Form1 : Form
     {
-        Timer timer = new Timer();
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         //Listengenerator listengenerator = new Listengenerator();
         int countdown = 5;
         string snText;
@@ -97,8 +98,10 @@ namespace WBS_Kplus_SN
                 //SendKeys.Send("{TAB}");    //Fehlerhafte Ausgabe von "I" oder "l" (nicht ersichtlich)
                 //SendKeys.Send("%b");       // ALT+b funktioniert nur wenn man vorher in das Textfeld rechts daneben wechselt. (Tab geht ja aber nicht)
                 //evt SendKeys.SendWait??
-                SendKeys.Send("\n");
-
+                //SendKeys.Send("\n");
+                Thread.Sleep(100);
+                InputSender.ClickKey(0x1c);
+                Thread.Sleep(500);
             }
 
             return 0;
