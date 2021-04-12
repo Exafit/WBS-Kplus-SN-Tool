@@ -16,4 +16,6 @@ At the moment only available in german.
 
 
 
-<a target="_blank" href="https://github.com/Exafit/WBS-Kplus-SN-Tool/blob/main/WBS_Kplus_SN/bin/Release/WBS_Kplus_SN.exe?raw=true"><h1>Download</h1></a>
+<h1>.exe-Datei: <a target="_blank" href="https://github.com/Exafit/WBS-Kplus-SN-Tool/blob/main/WBS_Kplus_SN/bin/Release/WBS_Kplus_SN.exe?raw=true">Download</a></h1>
+<h2>.zip-Datei: <a target="_blank" href="https://github.com/Exafit/WBS-Kplus-SN-Tool/raw/main/WBS_Kplus_SN.exe.zip?raw=true">Download</a></h2>
+
