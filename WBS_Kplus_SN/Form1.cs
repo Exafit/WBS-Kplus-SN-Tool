@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 
@@ -15,10 +8,8 @@ namespace WBS_Kplus_SN
     public partial class Form1 : Form
     {
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        //Listengenerator listengenerator = new Listengenerator();
         int countdown = 5;
         string snText;
-        //List<string> snListe = new List<string>();
         string[] snArray;
 
         public Form1()
@@ -48,7 +39,6 @@ namespace WBS_Kplus_SN
                 lbCountdown.Visible = false;
                 countdown = 5;
                 btnStart.Enabled = true;
-                //listengenerator.TextZuListe(snArray);
                 SimulateKeyInput(snArray);
 
             }
@@ -127,17 +117,20 @@ namespace WBS_Kplus_SN
                 for (int i = 0; i < snArray.Length; i++)
                 {
                     SendKeys.Send(snArray[i]);
+                    Thread.Sleep(100);
+
+                    //---nicht funktionierende Methoden:
                     //SendKeys.Send("{ENTER}");  //Fehlerhafte ausgabe von "M"
+                    //SendKeys.Send("\n");       //wird nur als Zeilenumbruch gewertet
                     //SendKeys.Send("{TAB}");    //Fehlerhafte Ausgabe von "I" oder "l" (nicht ersichtlich)
                     //SendKeys.Send("%b");       // ALT+b funktioniert nur wenn man vorher in das Textfeld rechts daneben wechselt. (Tab geht ja aber nicht)
-                    //evt SendKeys.SendWait??
-                    //SendKeys.Send("\n");
-                    Thread.Sleep(100);
+                    
+                    //nutze hardware scan codes für Enter Taste, anstatt virteller ScanCode
                     InputSender.ClickKey(0x1c);
                     Thread.Sleep(500);
                 }
             }
-            this.Activate();
+            this.Activate(); //Fokus auf Fenster setzen wenn fertig
             MessageBox.Show($"Fertig. \n{lbxVorschau.Items.Count.ToString()} SN eingefügt. \nBitte überprüfen Sie die Eingabe!");
             return 0;
         }

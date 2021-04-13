@@ -5,7 +5,6 @@ namespace WBS_Kplus_SN
 {
     public class InputSender
     {
-        #region Imports/Structs/Enums
         [StructLayout(LayoutKind.Sequential)]
         public struct KeyboardInput
         {
@@ -67,57 +66,12 @@ namespace WBS_Kplus_SN
             Scancode = 0x0008
         }
 
-        [Flags]
-        public enum MouseEventF
-        {
-            Absolute = 0x8000,
-            HWheel = 0x01000,
-            Move = 0x0001,
-            MoveNoCoalesce = 0x2000,
-            LeftDown = 0x0002,
-            LeftUp = 0x0004,
-            RightDown = 0x0008,
-            RightUp = 0x0010,
-            MiddleDown = 0x0020,
-            MiddleUp = 0x0040,
-            VirtualDesk = 0x4000,
-            Wheel = 0x0800,
-            XDown = 0x0080,
-            XUp = 0x0100
-        }
-
         [DllImport("user32.dll", SetLastError = true)]
         private static extern uint SendInput(uint nInputs, Input[] pInputs, int cbSize);
 
         [DllImport("user32.dll")]
         private static extern IntPtr GetMessageExtraInfo();
-
-        [DllImport("user32.dll")]
-        private static extern bool GetCursorPos(out POINT lpPoint);
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct POINT
-        {
-            public int X;
-            public int Y;
-        }
-
-        [DllImport("User32.dll")]
-        private static extern bool SetCursorPos(int x, int y);
-        #endregion
-
-        #region Wrapper Methods
-        public static POINT GetCursorPosition()
-        {
-            GetCursorPos(out POINT point);
-            return point;
-        }
-
-        public static void SetCursorPosition(int x, int y)
-        {
-            SetCursorPos(x, y);
-        }
-
+        
         public static void SendKeyboardInput(KeyboardInput[] kbInputs)
         {
             Input[] inputs = new Input[kbInputs.Length];
@@ -156,25 +110,5 @@ namespace WBS_Kplus_SN
             };
             SendKeyboardInput(inputs);
         }
-
-        public static void SendMouseInput(MouseInput[] mInputs)
-        {
-            Input[] inputs = new Input[mInputs.Length];
-
-            for (int i = 0; i < mInputs.Length; i++)
-            {
-                inputs[i] = new Input
-                {
-                    type = (int)InputType.Mouse,
-                    u = new InputUnion
-                    {
-                        mi = mInputs[i]
-                    }
-                };
-            }
-
-            SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
-        }
-        #endregion
     }
 }
