@@ -14,5 +14,5 @@ Während des automatischen Vorgangs keine Taste drücken oder mit der Maus ander
 A serial number tool for the ERP system KPlus of WBS It Service GmbH. It helps you convert the Block of SN to split it on commas and paste it into the SN window of Kplus.
 At the moment only available in german.
 <h2>.exe-Datei: <a target="_blank" href="https://github.com/Exafit/WBS-Kplus-SN-Tool/blob/main/WBS_Kplus_SN/bin/Release/WBS_Kplus_SN.exe?raw=true">Download</a></h2>
-<h2>.zip-Datei: <a target="_blank" href="https://github.com/Exafit/WBS-Kplus-SN-Tool/raw/main/WBS_Kplus_SN.exe.zip?raw=true">Download</a></h2>
+<h2>.zip-Datei: <a target="_blank" href="https://github.com/Exafit/WBS-Kplus-SN-Tool/raw/main/WBS_Kplus_SN.zip?raw=true">Download</a></h2>
 
