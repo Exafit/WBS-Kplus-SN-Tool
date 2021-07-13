@@ -59,14 +59,21 @@ namespace WBS_Kplus_SN
             //textSplit();
         }
 
-        private void rbMitSn_CheckedChanged(object sender, EventArgs e)
-        {
-            //textSplit();
-        }
+        //private void rbMitSn_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    //textSplit();
+        //}
 
-        private void rbMitSn_Click(object sender, EventArgs e)
+        private void rbIndiv_CheckedChanged(object sender, EventArgs e)
         {
-            textSplit();
+            if (rbIndiv.Checked)
+            {
+                tbIndiv.Enabled = true;
+            }
+            else
+            {
+                tbIndiv.Enabled = false;
+            }
         }
 
         private void rbMitKomma_Click(object sender, EventArgs e)
@@ -77,6 +84,23 @@ namespace WBS_Kplus_SN
         private void rbOhneKomma_Click(object sender, EventArgs e)
         {
             textSplit();
+        }
+
+        //nichtmehr in Verwendung
+        //private void rbMitSn_Click(object sender, EventArgs e)
+        //{
+        //    textSplit();
+        //}
+
+        //ruft bei klick auf Obj Methode zum trennen der SN auf und übergibt das/die Trenzeichen
+        private void rbIndiv_Click(object sender, EventArgs e)
+        {
+            textSplit(tbIndiv.Text.ToString());
+        }
+
+        private void tbIndiv_TextChanged(object sender, EventArgs e)
+        {
+            textSplit(tbIndiv.Text.ToString());
         }
 
         private void textSplit()
@@ -98,12 +122,30 @@ namespace WBS_Kplus_SN
                 lbxVorschau.Items.Clear();
                 lbxVorschau.Items.AddRange(snArray);
             }
-            if (rbMitSn.Checked == true)
+            //nichtmehr gebraucht
+            //if (rbMitSn.Checked == true)
+            //{
+            //    snText = richTextBox1.Text;
+            //    snText = Regex.Replace(snText, @"SN:", "");
+            //    snText = Regex.Replace(snText, @"\s+|\(|\)", "");
+            //    snArray = snText.Split(',');
+            //    lbxVorschau.Items.Clear();
+            //    lbxVorschau.Items.AddRange(snArray);
+            //}
+            lbAnzahl.Text = lbxVorschau.Items.Count.ToString();
+        }
+
+        //teilt den Text 
+        private void textSplit(string splitText)
+        {
+            if (rbIndiv.Checked == true)
             {
                 snText = richTextBox1.Text;
-                snText = Regex.Replace(snText, @"SN:", "");
-                snText = Regex.Replace(snText, @"\s+|\(|\)", "");
-                snArray = snText.Split(',');
+                //snText = Regex.Replace(snText, @"\n", " ");
+                snText = Regex.Replace(snText, @"\s+", " ");
+                splitText = Regex.Replace(splitText, @"\s+", " ");
+                snText = Regex.Replace(snText, splitText, "§");
+                snArray = snText.Split('§');
                 lbxVorschau.Items.Clear();
                 lbxVorschau.Items.AddRange(snArray);
             }
