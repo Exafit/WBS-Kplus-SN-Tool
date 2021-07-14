@@ -7,3 +7,8 @@ C:\Users\paul\OneDrive\BA-Uni\BA Glauchau\WS 20\Programmieren\VS\WBS_Kplus_SN\WB
 C:\Users\paul\OneDrive\BA-Uni\BA Glauchau\WS 20\Programmieren\VS\WBS_Kplus_SN\WBS_Kplus_SN\obj\Release\WBS_Kplus_SN.csproj.CoreCompileInputs.cache
 C:\Users\paul\OneDrive\BA-Uni\BA Glauchau\WS 20\Programmieren\VS\WBS_Kplus_SN\WBS_Kplus_SN\obj\Release\WBS_Kplus_SN.exe
 C:\Users\paul\OneDrive\BA-Uni\BA Glauchau\WS 20\Programmieren\VS\WBS_Kplus_SN\WBS_Kplus_SN\obj\Release\WBS_Kplus_SN.pdb
+C:\Users\paul\OneDrive\BA-Uni\BA Glauchau\WS 20\Programmieren\VS\WBS_Kplus_SN\WBS_Kplus_SN\obj\Release\WBS_Kplus_SN.csprojAssemblyReference.cache
+C:\Users\paul\OneDrive\BA-Uni\BA Glauchau\WS 20\Programmieren\VS\WBS_Kplus_SN\WBS_Kplus_SN\bin\Release\WBS_Kplus_SN.exe.manifest
+C:\Users\paul\OneDrive\BA-Uni\BA Glauchau\WS 20\Programmieren\VS\WBS_Kplus_SN\WBS_Kplus_SN\bin\Release\WBS_Kplus_SN.application
+C:\Users\paul\OneDrive\BA-Uni\BA Glauchau\WS 20\Programmieren\VS\WBS_Kplus_SN\WBS_Kplus_SN\obj\Release\WBS_Kplus_SN.exe.manifest
+C:\Users\paul\OneDrive\BA-Uni\BA Glauchau\WS 20\Programmieren\VS\WBS_Kplus_SN\WBS_Kplus_SN\obj\Release\WBS_Kplus_SN.application

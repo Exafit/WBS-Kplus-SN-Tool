@@ -46,7 +46,14 @@ namespace WBS_Kplus_SN
 
         private void richTextBox1_TextChanged_1(object sender, EventArgs e)
         {
-            textSplit();
+            if(rbIndiv.Checked)
+            {
+                textSplit(tbIndiv.Text.ToString());
+            }
+            else
+            {
+                textSplit();
+            }
         }
 
         private void rbMitKomma_CheckedChanged(object sender, EventArgs e)
@@ -135,7 +142,7 @@ namespace WBS_Kplus_SN
             lbAnzahl.Text = lbxVorschau.Items.Count.ToString();
         }
 
-        //teilt den Text 
+        //teilt den Text anhand der übergebenen Zeichen
         private void textSplit(string splitText)
         {
             if (rbIndiv.Checked == true)
@@ -144,8 +151,16 @@ namespace WBS_Kplus_SN
                 //snText = Regex.Replace(snText, @"\n", " ");
                 snText = Regex.Replace(snText, @"\s+", " ");
                 splitText = Regex.Replace(splitText, @"\s+", " ");
+                //Regex Sonderzeichen entfernen, da sonst absturz
+                splitText = Regex.Replace(splitText, @"\(|\)|\*|\\|\/|\!|\?|\^|\+|\-|\[|\]|\|", "");
+                snText = Regex.Replace(snText, @"\(|\)|\*|\\|\/|\!|\?|\^|\+|\-|\[|\]|\|", "");
+
                 snText = Regex.Replace(snText, splitText, "§");
                 snArray = snText.Split('§');
+                for (int i = 0; i < snArray.Length; i++)
+                {
+                    snArray[i] = Regex.Replace(snArray[i], @"\s+", "");
+                }
                 lbxVorschau.Items.Clear();
                 lbxVorschau.Items.AddRange(snArray);
             }
@@ -169,7 +184,7 @@ namespace WBS_Kplus_SN
                     
                     //nutze hardware scan codes für Enter Taste, anstatt virteller ScanCode
                     InputSender.ClickKey(0x1c);
-                    Thread.Sleep(500);
+                    Thread.Sleep(100);
                 }
             }
             this.Activate(); //Fokus auf Fenster setzen wenn fertig
